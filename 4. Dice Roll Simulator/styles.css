@@ -1,0 +1,325 @@
+:root {
+  --primary: #6e45e2;
+  --secondary: #88d3ce;
+  --bg-dark: #121212;
+  --bg-darker: #0a0a0a;
+  --text: #e0e0e0;
+  --glow: 0 0 15px rgba(110, 69, 226, 0.7);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, var(--bg-darker), var(--bg-dark));
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  padding: 2rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: var(--glow);
+}
+
+.dice-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 3rem 0;
+  flex-wrap: wrap;
+}
+
+.dice {
+  width: 120px;
+  height: 120px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1s ease-out;
+  cursor: pointer;
+}
+
+.dice-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  background: rgba(30, 30, 30, 0.9);
+  border: 2px solid rgba(110, 69, 226, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5),
+    inset 0 0 10px rgba(110, 69, 226, 0.2);
+}
+
+.dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, var(--primary), var(--secondary));
+  box-shadow: 0 0 10px var(--primary);
+  position: absolute;
+}
+
+/* Dice face configurations */
+.face-1 {
+  transform: rotateY(0deg) translateZ(60px);
+}
+.face-2 {
+  transform: rotateY(180deg) translateZ(60px);
+}
+.face-3 {
+  transform: rotateY(90deg) translateZ(60px);
+}
+.face-4 {
+  transform: rotateY(-90deg) translateZ(60px);
+}
+.face-5 {
+  transform: rotateX(90deg) translateZ(60px);
+}
+.face-6 {
+  transform: rotateX(-90deg) translateZ(60px);
+}
+
+/* Dot positions for each face */
+.face-1 .dot {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.face-2 .dot:nth-child(1) {
+  top: 25%;
+  left: 25%;
+}
+.face-2 .dot:nth-child(2) {
+  bottom: 25%;
+  right: 25%;
+}
+
+.face-3 .dot:nth-child(1) {
+  top: 25%;
+  left: 25%;
+}
+.face-3 .dot:nth-child(2) {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.face-3 .dot:nth-child(3) {
+  bottom: 25%;
+  right: 25%;
+}
+
+.face-4 .dot:nth-child(1) {
+  top: 25%;
+  left: 25%;
+}
+.face-4 .dot:nth-child(2) {
+  top: 25%;
+  right: 25%;
+}
+.face-4 .dot:nth-child(3) {
+  bottom: 25%;
+  left: 25%;
+}
+.face-4 .dot:nth-child(4) {
+  bottom: 25%;
+  right: 25%;
+}
+
+.face-5 .dot:nth-child(1) {
+  top: 25%;
+  left: 25%;
+}
+.face-5 .dot:nth-child(2) {
+  top: 25%;
+  right: 25%;
+}
+.face-5 .dot:nth-child(3) {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.face-5 .dot:nth-child(4) {
+  bottom: 25%;
+  left: 25%;
+}
+.face-5 .dot:nth-child(5) {
+  bottom: 25%;
+  right: 25%;
+}
+
+.face-6 .dot:nth-child(1) {
+  top: 25%;
+  left: 25%;
+}
+.face-6 .dot:nth-child(2) {
+  top: 25%;
+  right: 25%;
+}
+.face-6 .dot:nth-child(3) {
+  top: 50%;
+  left: 25%;
+  transform: translateY(-50%);
+}
+.face-6 .dot:nth-child(4) {
+  top: 50%;
+  right: 25%;
+  transform: translateY(-50%);
+}
+.face-6 .dot:nth-child(5) {
+  bottom: 25%;
+  left: 25%;
+}
+.face-6 .dot:nth-child(6) {
+  bottom: 25%;
+  right: 25%;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.btn {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(145deg, var(--primary), var(--secondary));
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(110, 69, 226, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(110, 69, 226, 0.6);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+.history {
+  margin-top: 2rem;
+  width: 100%;
+  max-height: 150px;
+  overflow-y: auto;
+  padding: 1rem;
+  background: rgba(30, 30, 30, 0.5);
+  border-radius: 10px;
+  border: 1px solid rgba(110, 69, 226, 0.2);
+}
+
+.history h3 {
+  margin-bottom: 0.5rem;
+  color: var(--secondary);
+}
+
+.history-list {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.history-item {
+  background: rgba(110, 69, 226, 0.1);
+  padding: 0.3rem 0.6rem;
+  border-radius: 20px;
+  border: 1px solid rgba(110, 69, 226, 0.3);
+  font-size: 0.9rem;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(30, 30, 30, 0.3);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--primary), var(--secondary));
+  border-radius: 10px;
+}
+
+/* Animation for rolling */
+@keyframes roll {
+  0% {
+    transform: rotateX(0) rotateY(0) rotateZ(0);
+  }
+  100% {
+    transform: rotateX(720deg) rotateY(360deg) rotateZ(180deg);
+  }
+}
+
+.rolling {
+  animation: roll 1s ease-out;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .dice {
+    width: 90px;
+    height: 90px;
+  }
+
+  .dice-face {
+    transform: translateZ(45px);
+  }
+}
