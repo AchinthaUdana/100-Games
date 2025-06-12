@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quantum Flip - Coin Toss Game</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Quantum Flip</h1>
+
+      <div class="coin-container">
+        <div class="coin" id="coin">
+          <div class="coin-face heads">
+            <svg viewBox="0 0 100 100">
+              <circle
+                cx="50"
+                cy="50"
+                r="45"
+                fill="#f8d030"
+                stroke="#000"
+                stroke-width="2"
+              />
+              <text
+                x="50"
+                y="55"
+                font-size="40"
+                text-anchor="middle"
+                fill="#000"
+              >
+                H
+              </text>
+            </svg>
+          </div>
+          <div class="coin-face tails">
+            <svg viewBox="0 0 100 100">
+              <circle
+                cx="50"
+                cy="50"
+                r="45"
+                fill="#f8d030"
+                stroke="#000"
+                stroke-width="2"
+              />
+              <text
+                x="50"
+                y="55"
+                font-size="40"
+                text-anchor="middle"
+                fill="#000"
+              >
+                T
+              </text>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="result" id="result"></div>
+
+      <div class="controls">
+        <div class="btn-group">
+          <button class="heads-btn" id="heads-btn">Choose Heads</button>
+          <button class="tails-btn" id="tails-btn">Choose Tails</button>
+        </div>
+        <button class="flip-btn" id="flip-btn">Flip Coin</button>
+        <button class="reset-btn" id="reset-btn">Reset Game</button>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <h3 id="heads-count">0</h3>
+          <p>Heads</p>
+        </div>
+        <div class="stat">
+          <h3 id="tails-count">0</h3>
+          <p>Tails</p>
+        </div>
+        <div class="stat">
+          <h3 id="win-count">0</h3>
+          <p>Wins</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

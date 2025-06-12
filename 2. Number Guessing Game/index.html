@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cosmic Guess | Number Game</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="game-container">
+      <h1>Cosmic Guess</h1>
+      <p class="game-description">
+        Guess the secret number between 1 and 100. We'll give you hints along
+        the way!
+      </p>
+
+      <div class="message" id="message"></div>
+
+      <div class="input-group">
+        <input
+          type="number"
+          id="guess-input"
+          placeholder="Enter your guess..."
+          min="1"
+          max="100"
+        />
+        <button id="guess-button">Guess</button>
+      </div>
+
+      <div class="game-stats">
+        <div class="stat">
+          <div class="stat-value" id="attempts">0</div>
+          <div class="stat-label">Attempts</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" id="best-score">-</div>
+          <div class="stat-label">Best Score</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" id="range">1-100</div>
+          <div class="stat-label">Range</div>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
